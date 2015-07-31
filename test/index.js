@@ -1,8 +1,9 @@
-const chai = require('chai');
-const assert = chai.assert;
+require('./board-test');
+require('./player-test');
+require('./game-test');
 
-describe('my test suite', function () {
-  it('should work', function () {
-    assert(true);
-  });
-});
+// describe('my test suite', function () {
+//   it('should work', function () {
+//     assert(true);
+//   });
+// });

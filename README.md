@@ -1,20 +1,3 @@
-# Game Time Starter Kit
+# Socket-Scrabble
 
-To install the dependencies:
-
-```
-npm install
-```
-
-To fire up a development server:
-
-```
-npm run server
-```
-
-
-To build the static files:
-
-```js
-npm run build
-```
+An attemt to build an interactive scrabble board using WebSockets
