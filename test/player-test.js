@@ -9,7 +9,7 @@ describe('Player', function() {
     assert(new Player());
   });
 
-  it('Players can place pieces', function () {
+  it('Players can place pieces starting in the middle of the board', function () {
     var board = new Board();
     var bob   = new Player(board); 
     bob.placeLetter(7,7);
@@ -21,7 +21,7 @@ describe('Player', function() {
     var board = new Board();
     var bob = new Player(board);
     bob.placeLetter(6,6);
-    bob.placeLetter(7,7);
+    // bob.placeLetter(7,7);
 
     assert.equal(_.keys(board.placedPieces).length, 0);
     
