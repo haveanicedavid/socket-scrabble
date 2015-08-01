@@ -12,19 +12,37 @@ describe('Player', function() {
   it('Players can place pieces starting in the middle of the board', function () {
     var board = new Board();
     var bob   = new Player(board); 
-    bob.placeLetter(7,7);
 
-    assert.equal(_.keys(board.placedPieces).length, 1);
+    bob.placeTile(7,7);
+
+    assert(board.hasTile(7,7));
+    // debugger;
+    // assert.equal(_.size(board.placedTiles).length, 1);
   });
 
   it('The first placed piece must be in the middle of the board', function () {
     var board = new Board();
     var bob = new Player(board);
-    bob.placeLetter(6,6);
-    // bob.placeLetter(7,7);
+    bob.placeTile(6,6);
+    assert(!board.hasTile(6,6));
 
-    assert.equal(_.keys(board.placedPieces).length, 0);
-    
+    bob.placeTile(7,7);
+    bob.placeTile(6,6);
+
+    assert(board.hasTile(7,7));
+    assert(board.hasTile(6,6));
+  });
+
+  it('can only place tiles next to other tiles', function () {
+    var board = new Board();
+    var bob = new Player(board);
+
+    bob.placeTile(7,7);
+    bob.placeTile(2,2);
+
+    assert(!board.hasTile(7,7));
+    // assert(!board.hasTile(2,2));
+     
   });
 
 });

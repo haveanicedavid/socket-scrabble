@@ -1,5 +1,6 @@
 var assert = require('chai').assert;
-var Board = require('../lib/board.js');
+var Board  = require('../lib/board.js');
+var Player = require('../lib/player.js');
 var _      = require('lodash');
 
 describe('The Board', function() {
@@ -27,7 +28,13 @@ describe('The Board', function() {
     }, 0);
 
     assert.equal(pieceCount, 100);
+  });
 
+  it('can find tiles', function () {
+    var b = new Board();
+    var bob = new Player(b);
+    bob.placeTile(7,7);
+    assert(b.hasTile(7,7));
   });
 
 });
