@@ -33,7 +33,8 @@ describe('The Board', function() {
   it('can find tiles', function () {
     var b   = new Board();
     var bob = new Player(b);
-    bob.placeTile(7,7);
+    // bob.placeTile(7,7);
+    b.placeTile(7,7, bob);
     assert(b.hasTile(7,7));
   });
 
