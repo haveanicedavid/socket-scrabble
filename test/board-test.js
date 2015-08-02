@@ -11,8 +11,8 @@ describe('The Board', function() {
 
   it('A single board should be 15 X 15', function () {
     var b = new Board();
-    assert.equal(b.rows, 15); 
-    assert.equal(b.cols, 15); 
+    assert.equal(b.rows, 15);
+    assert.equal(b.cols, 15);
   });
 
   it('letter tiles have different score', function () {
@@ -31,7 +31,7 @@ describe('The Board', function() {
   });
 
   it('can find tiles', function () {
-    var b = new Board();
+    var b   = new Board();
     var bob = new Player(b);
     bob.placeTile(7,7);
     assert(b.hasTile(7,7));

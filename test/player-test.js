@@ -1,17 +1,17 @@
 var assert = require('chai').assert;
 var Player = require('../lib/player');
-var Board = require('../lib/board.js');
-var _      = require('lodash');
+var Board  = require('../lib/board.js');
+// var _      = require('lodash');
 
 describe('Player', function() {
-  
+
   it('exists', function () {
     assert(new Player());
   });
 
   it('Players can place pieces starting in the middle of the board', function () {
     var board = new Board();
-    var bob   = new Player(board); 
+    var bob   = new Player(board);
 
     bob.placeTile(7,7);
 
@@ -22,7 +22,8 @@ describe('Player', function() {
 
   it('The first placed piece must be in the middle of the board', function () {
     var board = new Board();
-    var bob = new Player(board);
+    var bob   = new Player(board);
+
     bob.placeTile(6,6);
     assert(!board.hasTile(6,6));
 
@@ -33,16 +34,16 @@ describe('Player', function() {
     assert(board.hasTile(6,6));
   });
 
-  it('can only place tiles next to other tiles', function () {
+  xit('can only place tiles next to other tiles', function () {
     var board = new Board();
-    var bob = new Player(board);
+    var bob   = new Player(board);
 
     bob.placeTile(7,7);
     bob.placeTile(2,2);
 
     assert(!board.hasTile(7,7));
     // assert(!board.hasTile(2,2));
-     
+
   });
 
 });
