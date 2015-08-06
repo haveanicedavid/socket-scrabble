@@ -9,11 +9,11 @@ describe('The Board', function() {
     assert(new Board());
   });
 
-  it('A single board should be 15 X 15', function () {
-    var b = new Board();
-    assert.equal(b.rows, 15);
-    assert.equal(b.cols, 15);
-  });
+  // it('A single board should be 15 X 15', function () {
+  //   var b = new Board();
+  //   assert.equal(b.rows, 15);
+  //   assert.equal(b.cols, 15);
+  // });
 
   it('letter tiles have different score', function () {
     var b = new Board();
@@ -34,8 +34,8 @@ describe('The Board', function() {
     var b   = new Board();
     var bob = new Player(b);
     // bob.placeTile(7,7);
-    b.placeTile(7,7, bob);
-    assert(b.hasTile(7,7));
+    b.placeTile(0,0, bob);
+    assert(b.hasTile(0,0));
   });
 
 });
