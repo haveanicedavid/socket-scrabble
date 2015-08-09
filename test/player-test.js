@@ -5,8 +5,11 @@ var Board  = require('../lib/board.js');
 
 describe('Player', function() {
 
-  it('exists', function () {
-    assert(new Player());
+  it('can place tiles', function () {
+    var board = new Board();
+    var bob = new Player(board);
+    bob.placeTile(0,0);
+    assert(board.hasTile(0,0));
   });
 
 

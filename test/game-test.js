@@ -4,10 +4,6 @@ var Game = require('../lib/game');
 
 describe('The game runner', function() {
 
-  it('Should exist', function () {
-    assert(new Game());
-  });
-
   it('Can say if a word is valid', function () {
     var g = new Game();
     assert.equal(g.isValidWord("test"), true); 
@@ -18,6 +14,12 @@ describe('The game runner', function() {
     var g = new Game();
     assert.equal(g.isValidWord("asdfa"), false); 
     // assert.equal(g.isValidWord("asd;fkasjdf"), false); 
+  });
+
+  it('Can score a word', function () {
+    var g = new Game();
+    assert.equal (g.scoreWord("a"), 1);
+    assert.equal (g.scoreWord("test"), 13);
   });
 
 });

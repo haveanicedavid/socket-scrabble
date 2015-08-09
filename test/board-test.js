@@ -5,10 +5,6 @@ var _      = require('lodash');
 
 describe('The Board', function() {
 
-  it('Should exist', function () {
-    assert(new Board());
-  });
-
   // it('A single board should be 15 X 15', function () {
   //   var b = new Board();
   //   assert.equal(b.rows, 15);
@@ -67,6 +63,20 @@ describe('The Board', function() {
     assert(board.hasTile(0,0));
     board.placeTile(1,0, bob);
     assert(board.hasTile(1,0));
+  });
+
+  it('cannot place two tiles in the same spot', function () {
+    var board = new Board();
+    var bob   = new Player(board);
+    var joe   = new Player(board);
+
+    bob.placeTile(0,0);
+    bob.placeTile(0,1);
+    assert.equal(board.placedTiles[0][1].player, bob);
+
+    joe.placeTile(0,1);
+    assert.equal(board.placedTiles[0][1].player, bob);
+    assert.notEqual(board.placedTiles[0][1].player, joe);
   });
 
   it('can find tiles', function () {
